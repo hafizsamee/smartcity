@@ -1,1 +1,849 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Engineering Consultants (SCEC)</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1E2B58;
+            --primary-light: #2A3C7A;
+            --accent-cyan: #00BCD4;
+            --accent-purple: #673AB7;
+            --accent-pink: #E91E63;
+            --text-dark: #2B2D42;
+            --text-light: #6C757D;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #FCFCFD;
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-graphic {
+            width: 45px;
+            height: 45px;
+        }
+
+        .brand-text .ar {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            line-height: 1.2;
+            direction: rtl;
+        }
+
+        .brand-text .en {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .btn-contact {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-contact:hover {
+            background: var(--primary-light);
+            box-shadow: 0 4px 12px rgba(30, 43, 88, 0.3);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 160px 20px 100px;
+            background: linear-gradient(135deg, rgba(30,43,88,0.03) 0%, rgba(0,188,212,0.05) 100%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-image-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #fff;
+        }
+
+        .hero-image-box img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- Leadership & Quotes Section --- */
+        .leadership {
+            padding: 90px 20px;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-title div {
+            width: 60px;
+            height: 4px;
+            background: var(--accent-cyan);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .quote-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        .quote-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .quote-card.royal {
+            border-left-color: var(--accent-cyan);
+        }
+
+        .quote-card i.quote-icon {
+            font-size: 2rem;
+            color: rgba(30,43,88,0.15);
+            margin-bottom: 15px;
+        }
+
+        .quote-card p {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .profile-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ddd;
+        }
+
+        .profile-info h4 {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .profile-info span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 90px 20px;
+            background: var(--bg-light);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- Services Section --- */
+        .services {
+            padding: 90px 20px;
+            background: var(--white);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid #EAEAEA;
+            border-radius: 15px;
+            padding: 35px 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(0, 188, 212, 0.1);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            background: rgba(30, 43, 88, 0.1);
+            color: var(--primary);
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            background: rgba(103, 58, 183, 0.1);
+            color: var(--accent-purple);
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            background: rgba(233, 30, 99, 0.1);
+            color: var(--accent-pink);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .service-card ul li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- What We Do & Goals --- */
+        .goals-section {
+            padding: 90px 20px;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .goals-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .goals-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .goals-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .goals-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .goals-list i {
+            background: var(--accent-cyan);
+            color: var(--primary);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* --- Clients Section --- */
+        .clients {
+            padding: 90px 20px;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .clients-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .client-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border: 1px solid #EAEAEA;
+            transition: var(--transition);
+        }
+
+        .client-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--accent-cyan);
+        }
+
+        .client-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .client-card span {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #151D3B;
+            color: var(--white);
+            padding: 70px 20px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .brand-text .ar { color: var(--white); }
+        .footer-brand p {
+            margin-top: 15px;
+            color: #A0AABF;
+            font-size: 0.9rem;
+            max-width: 350px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #A0AABF;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            color: #A0AABF;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #7A869A;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-container, .about-container, .goals-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .nav-links {
+                display: none;
+            }
+            .quote-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <!-- Inline SVG Logo Placeholder 
+                <svg class="logo-graphic" viewBox="0 0 100 100">
+                    <polygon points="50,10 90,35 75,85 25,85 10,35" fill="none" stroke="#1E2B58" stroke-width="6"/>
+                    <circle cx="50" cy="10" r="7" fill="#00BCD4"/>
+                    <circle cx="90" cy="35" r="7" fill="#673AB7"/>
+                    <circle cx="75" cy="85" r="7" fill="#E91E63"/>
+                    <circle cx="25" cy="85" r="7" fill="#1E2B58"/>
+                    <circle cx="10" cy="35" r="7" fill="#00BCD4"/>
+                    <path d="M50 10 L75 85 M90 35 L25 85 M10 35 L50 10" stroke="#1E2B58" stroke-width="3" opacity="0.3"/>
+                </svg>
+				-->
+				
+				
+				<img src="logo.png" alt="Smart City Office Logo">
+                
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#goals">Our Goals</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact" class="btn-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Smart City Engineering Consultants</h1>
+                <p>Bringing top local and international experts onto one platform to deliver sustainable development solutions across Saudi Arabia.</p>
+                <a href="#services" class="btn-contact" style="padding: 12px 30px; font-size: 1rem;">Explore Services</a>
+            </div>
+            <div class="hero-image-box">
+                <!-- SVG Graphic Placeholder for Smart City Banner 
+                <svg width="100%" height="350" viewBox="0 0 600 350" style="background: linear-gradient(135deg, #1E2B58, #2A3C7A);">
+                    <rect x="0" y="0" width="600" height="350" fill="url(#grid)" />
+                    <circle cx="300" cy="175" r="120" fill="none" stroke="rgba(0,188,212,0.2)" stroke-width="2"/>
+                    <circle cx="300" cy="175" r="80" fill="none" stroke="rgba(233,30,99,0.3)" stroke-width="2"/>
+                    <path d="M150,280 L220,180 L300,240 L380,120 L450,280" fill="none" stroke="#00BCD4" stroke-width="4"/>
+                    <circle cx="380" cy="120" r="8" fill="#E91E63"/>
+                    <circle cx="220" cy="180" r="6" fill="#00BCD4"/>
+                    <circle cx="300" cy="240" r="6" fill="#673AB7"/>
+                    <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="18" opacity="0.8">ENGINEERING & CONSULTANCY SOLUTIONS</text>
+                </svg>
+				-->
+				
+				<img src="building.png" alt="Building">
+				
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Quotes Section -->
+    <section class="leadership">
+        <div class="section-title">
+            <h2>Vision & Leadership</h2>
+            <div></div>
+        </div>
+        <div class="quote-grid">
+            <div class="quote-card royal">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"My primary goal is to be an exemplary and leading nation in all aspects, and I will work with you in achieving this endeavor."</p>
+                <div class="profile-meta">
+                    <!-- SVG Leader Avatar Placeholder -->
+                    <svg class="profile-avatar" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="50" fill="#EAEAEA"/>
+                        <circle cx="50" cy="40" r="20" fill="#1E2B58"/>
+                        <path d="M20,90 Q50,60 80,90" fill="#1E2B58"/>
+                    </svg>
+                    <div class="profile-info">
+                        <h4>King Salman Bin Abdulaziz Al-Saud</h4>
+                        <span>Custodian of the Two Holy Mosques</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"Our focused qualitative approach means we enjoy a leading position in sectors such as project management, construction, industry, information technology, business services, and consultancy."</p>
+                <div class="profile-meta">
+                    <svg class="profile-avatar" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="50" fill="#EAEAEA"/>
+                        <circle cx="50" cy="40" r="20" fill="#2A3C7A"/>
+                        <path d="M20,90 Q50,60 80,90" fill="#2A3C7A"/>
+                    </svg>
+                    <div class="profile-info">
+                        <h4>Eng. Abdulaziz Saad Al Buqmi</h4>
+                        <span>President, Smart City Office</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 20px;">About Smart City Office</h2>
+                <p>Smart City Engineering Consultant brings a distinguished group of top local and international experts onto one platform to deliver sustainable development solutions.</p>
+                <p>Over the past years, Smart City Engineering has developed a wide work portfolio with specialized experience across key sectors including Project Management, Information Technology, Buildings, Roads, Hydrology, and Hydraulics.</p>
+            </div>
+            <div class="about-image">
+                <!-- SVG Illustration Placeholder -->
+                <svg width="100%" height="300" viewBox="0 0 500 300" style="background:#fff; border-radius:15px;">
+                    <rect width="500" height="300" fill="#F4F5F9"/>
+                    <g transform="translate(100, 50)">
+                        <rect x="20" y="40" width="60" height="150" fill="#1E2B58" opacity="0.8"/>
+                        <rect x="100" y="10" width="80" height="180" fill="#2A3C7A"/>
+                        <rect x="200" y="70" width="70" height="120" fill="#00BCD4" opacity="0.7"/>
+                        <line x1="0" y1="190" x2="300" y2="190" stroke="#333" stroke-width="4"/>
+                    </g>
+                    <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" fill="#6C757D" font-size="14">Integrated Development & Planning</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Core Services</h2>
+            <div></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h3>Project Management</h3>
+                <p>Comprehensive engineering consulting covering all project phases from inception to completion.</p>
+                <ul>
+                    <li>PMO Establishment & Operation</li>
+                    <li>PMI Standards Compliance</li>
+                    <li>Process Re-engineering & Automation</li>
+                    <li>Design Development & Site Supervision</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <h3>Surveying</h3>
+                <p>In-house survey and CAD experts delivering complex professional land surveys across Saudi Arabia.</p>
+                <ul>
+                    <li>Topographical Surveys</li>
+                    <li>Boundary Surveys</li>
+                    <li>Zoning Conformance Analysis</li>
+                    <li>Urban Planning Compliance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-house-signal"></i>
+                </div>
+                <h3>Smart Homes & Design</h3>
+                <p>Combining home automation with functional, modern architectural building designs.</p>
+                <ul>
+                    <li>Domotics & Home Automation</li>
+                    <li>Remote Device Control Systems</li>
+                    <li>Residential & Commercial Architecture</li>
+                    <li>Special Concept Planning</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h3>Information Technology</h3>
+                <p>Full-spectrum IT device management, application development, and infrastructure support.</p>
+                <ul>
+                    <li>Application Development & Systems Integration</li>
+                    <li>Operating Systems & Security Planning</li>
+                    <li>Data Management Consultation</li>
+                    <li>LAN & Workstation Standards</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do & Goals -->
+    <section class="goals-section" id="goals">
+        <div class="goals-container">
+            <div>
+                <!-- SVG Graphic -->
+                <svg width="100%" height="280" viewBox="0 0 400 280">
+                    <circle cx="200" cy="140" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="20"/>
+                    <circle cx="200" cy="140" r="100" fill="none" stroke="#00BCD4" stroke-width="6" stroke-dasharray="400" stroke-dashoffset="100"/>
+                    <text x="200" y="135" text-anchor="middle" fill="#fff" font-size="28" font-weight="bold">85.0%</text>
+                    <text x="200" y="165" text-anchor="middle" fill="#00BCD4" font-size="14">Performance Growth</text>
+                </svg>
+            </div>
+            <div class="goals-content">
+                <h2>What We Do & Our Goals</h2>
+                <p style="color: #A0AABF;">We provide expert opinions, analysis, and recommendations to serve as objective troubleshooters, providing strategies to prevent problems and improve overall performance.</p>
+                <ul class="goals-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Establish strong, collaborative relationships with all clients.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Solve complex problems while empowering clients to maintain long-term solutions.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Ensure continuous attention to developing high-value projects and strategic relationships.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+        <div class="section-title">
+            <h2>Our Prestigious Clients</h2>
+            <div></div>
+        </div>
+        <div class="clients-grid">
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-landmark"></i></div>
+                <span>Royal Commission for Riyadh City</span>
+            </div>
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-city"></i></div>
+                <span>Royal Commission for Jubail & Yanbu</span>
+            </div>
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-building-user"></i></div>
+                <span>National Housing Company (NHC)</span>
+            </div>
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-hospital"></i></div>
+                <span>National Guard Health Affairs</span>
+            </div>
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-building-columns"></i></div>
+                <span>Riyadh Municipality</span>
+            </div>
+            <div class="client-card">
+                <div class="client-icon-wrapper"><i class="fa-solid fa-briefcase"></i></div>
+                <span>Saeed Raddad Group</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo">
+                    <div class="brand-text">
+                        <div class="ar">المدينة الذكية</div>
+                        <div class="en" style="color: #A0AABF;">Smart City Office</div>
+                    </div>
+                </a>
+                <p>Smart City Engineering Consultants (SCEC) — Leading provider of PMO, Surveying, IT, and Architectural solutions across the Kingdom of Saudi Arabia.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#goals">Our Goals</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Details</h4>
+                <p><i class="fa-solid fa-globe"></i> www.smartcity-sa.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</p>
+                <p><i class="fa-solid fa-phone"></i> Contact Office +966 50 305 5123</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; Smart City Engineering Consultants. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
